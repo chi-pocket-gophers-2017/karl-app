@@ -1,5 +1,5 @@
 <h1>Register</h1>
-<%= form_for url: new_user_path do |f| %>
+<%= form_with model: @user do |f| %>
   <p>
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
@@ -20,7 +20,7 @@
     <%= f.password_field :password %>
   </p>
 
-  <%= f.hidden_field 'mentor', false %>
+  <%= f.hidden_field :mentor, value: false  %>
 
   <p>
     <%= f.submit "Register" %>
