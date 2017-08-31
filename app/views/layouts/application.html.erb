@@ -16,7 +16,8 @@
           <li><%= link_to "Log out", session_path(current_user), method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign in", new_session_path %></li>
-          <li><%= link_to "Create Account", new_user_path %></li>
+          <li><%= link_to "Create Student Account", new_student_path %></li>
+          <li><%= link_to "Create Mentor Account", new_mentor_path %></li>
         <% end %>
       </ul>
     </nav>
