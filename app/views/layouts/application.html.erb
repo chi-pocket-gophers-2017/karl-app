@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>KarlApp</title>
     <%= csrf_meta_tags %>
     <!-- adds source sans pro as a font" -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- adds icons to application  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all'%>
+    <%= javascript_include_tag 'application'%>
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li><%= link_to "Home", root_path %></li>
-        <% if logged_in? %>
-          <li><%= link_to "Log out", session_path(current_user), method: :delete %></li>
-        <% else %>
-          <li><%= link_to "Sign in", new_session_path %></li>
-          <li><%= link_to "Create Student Account", new_student_path %></li>
-          <li><%= link_to "Create Mentor Account", new_mentor_path %></li>
-        <% end %>
-      </ul>
+    <nav class="dbc-blue" role="navigation">
+      <div class="nav-wrapper container">
+        <ul class="right hide-on-med-and-down">
+          <li><%= link_to "Home", root_path %></li>
+          <% if logged_in? %>
+            <li><%= link_to "Log out", session_path(current_user), method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign in", new_session_path %></li>
+            <li><%= link_to "Create Student Account", new_student_path %></li>
+            <li><%= link_to "Create Mentor Account", new_mentor_path %></li>
+          <% end %>
+        </ul>
+        <ul id="nav-mobile" class="side-nav">
+          <li><%= link_to "Home", root_path %></li>
+          <% if logged_in? %>
+            <li><%= link_to "Log out", session_path(current_user), method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign in", new_session_path %></li>
+            <li><%= link_to "Create Student Account", new_student_path %></li>
+            <li><%= link_to "Create Mentor Account", new_mentor_path %></li>
+          <% end %>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
     </nav>
 
     <%= yield %>
