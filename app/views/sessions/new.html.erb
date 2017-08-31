@@ -1,16 +1,21 @@
-<h1>Log In</h1>
-<%= form_with url: sessions_path do |f| %>
-  <p>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </p>
+<div class= "container">
 
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </p>
+  <h2>Log In</h2>
 
-  <p>
-    <%= f.submit "Log In" %>
-  </p>
-<% end %>
+  <%= form_with url: sessions_path do |f| %>
+
+    <div class="input-field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="btn waves-effect">
+      <%= f.submit "Log In" %>
+    </div>
+  <% end %>
+</div>
