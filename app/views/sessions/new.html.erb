@@ -1,21 +1,26 @@
-<div class= "container">
+<div class="center-form" >
+  <div class= "container">
+    <div class="row">
+      <div class="col s10 offset-s1" >
+        <h3 class="white-text">Log In</h2>
 
-  <h2>Log In</h2>
+        <%= form_with url: sessions_path do |f| %>
 
-  <%= form_with url: sessions_path do |f| %>
+          <div class="input-field white-text">
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+          </div>
 
-    <div class="input-field">
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+          <div class="input-field white-text">
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+          </div>
+
+          <div class="btn waves-effect black-text">
+            <%= f.submit "Log In" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-
-    <div class="input-field">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </div>
-
-    <div class="btn waves-effect">
-      <%= f.submit "Log In" %>
-    </div>
-  <% end %>
+  </div>
 </div>

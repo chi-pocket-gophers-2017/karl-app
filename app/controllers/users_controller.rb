@@ -7,10 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(allowed_params)
     if @user.save
       session[:id] = @user.id
+      logger.info "Saved the user"
       redirect_to root_path, notice: "You are now logged in as #{@user.first_name} #{@user.last_name}."
     else
       render 'new'
-      redirect_to root_path
     end
   end
 
