@@ -9390,7 +9390,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 
 /*changes fonts to dbc*/
 html {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro';
 }
 
 /*adds a background picture*/
@@ -9405,3 +9405,29 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.title-welcome {
+  font-size: 40px;
+  margin-bottom: 0px;
+}
+.to-text {
+  font-weight: 100;
+  margin: 0px;
+}
+
+.karl-text {
+  font-weight: 400;
+  font-style: italic;
+  margin: 0px;
+}
+.sign-up-text{
+  font: italic normal;
+}
+.btn{
+  background-color: white;
+}
+
+.dbc-blue{
+  background-color: #19abb5;
+}
+
