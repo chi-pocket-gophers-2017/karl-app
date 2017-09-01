@@ -12,5 +12,6 @@
 //
 
 //= require init
+//= require picture_upload
 //= require_tree .
 //= require_tree ./channels
