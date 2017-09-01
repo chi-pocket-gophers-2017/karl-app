@@ -1,4 +1,15 @@
-<div class="pending-request">
-	<p> <%= r.student.full_name %> </p>
-	<p> <%= r.created_at.strftime("%I:%M %p") %></p>
-</div>
+
+
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card orange darken-1">
+            <div class="card-content white-text">
+              <span class="card-title"><%= r.student.full_name %></span>
+ 				<p> PICTURE </p>
+            </div>
+            <div class="card white">
+				<p> Request made at <%= r.created_at.strftime("%I:%M %p") %></p>
+			</div>
+          </div>
+        </div>
+      </div>
