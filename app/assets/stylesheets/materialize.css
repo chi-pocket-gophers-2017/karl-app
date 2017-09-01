@@ -9439,10 +9439,14 @@ body {
 
 .center-reg{
   position: relative;
-  top: 8vh;
+  top: 10vh;
 }
 
 .logout{
   position: relative;
   top: 1vh;
+}
+
+.reg-title{
+  margin: 0px;
 }

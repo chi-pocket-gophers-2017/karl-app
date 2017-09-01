@@ -1,26 +1,35 @@
-<h1>Register as Mentor</h1>
-<%= form_with url: mentors_path, model: User do |f| %>
-  <p>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </p>
+<div class="center-reg" >
+  <div class= "container">
+    <div class="row">
+      <div class="col s10 offset-s1" >
+        <h3 class="white-text reg-title">Mentor</h3>
+        <h3 class="white-text reg-title">Registration</h3>
+        <%= form_with url: mentors_path, model: User do |f| %>
+          <div class="input-field white-text">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name %>
+          </div>
 
-  <p>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </p>
+          <div class="input-field white-text">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name %>
+          </div>
 
-  <p>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </p>
+          <div class="input-field white-text">
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+          </div>
 
-  <p>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </p>
+          <div class="input-field white-text">
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+          </div>
 
-  <p>
-    <%= f.submit "Register" %>
-  </p>
-<% end %>
+          <div class="btn waves-effect black-text">
+            <%= f.submit "Register" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>        
+</div>
