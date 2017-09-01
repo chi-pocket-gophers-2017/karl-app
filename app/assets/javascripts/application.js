@@ -15,3 +15,4 @@
 //= require materialize
 //= require init
 //= require_tree .
+//= require_tree ./channels

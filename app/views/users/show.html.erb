@@ -1,7 +1,9 @@
 <h1>Users show</h1>
 
-<%= link_to "Make a new request", requests_path, method: :post %>
+<%= button_to "Make a new request", requests_path %>
 
-<% Request.all.each do |r| %>
-  <p><%= r.student.first_name %></p>
-<% end %>
+<div id="requests">
+  <% Request.all.each do |r| %>
+    <p><%= r.student.first_name %></p>
+  <% end %>
+</div>
