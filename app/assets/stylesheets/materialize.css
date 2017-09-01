@@ -9437,6 +9437,11 @@ body {
   top: 20vh;
 }
 
+.center-reg{
+  position: relative;
+  top: 8vh;
+}
+
 .logout{
   position: relative;
   top: 1vh;
