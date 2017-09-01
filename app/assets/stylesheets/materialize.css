@@ -9421,7 +9421,8 @@ body {
   margin: 0px;
 }
 .sign-up-text{
-  font: italic normal;
+  font-style: italic ;
+  margin-bottom: 18px;
 }
 .btn{
   background-color: white;
@@ -9449,4 +9450,8 @@ body {
 
 .reg-title{
   margin: 0px;
+}
+
+.k-a-r-l-text {
+  margin: 2px;
 }
