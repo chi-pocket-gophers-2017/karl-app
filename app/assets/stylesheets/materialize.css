@@ -9429,9 +9429,24 @@ body {
 
 .dbc-blue{
   background-color: #19abb5;
+  color: black;
 }
 
 .center-form{
   position: relative;
   top: 20vh;
+}
+
+.center-reg{
+  position: relative;
+  top: 10vh;
+}
+
+.logout{
+  position: relative;
+  top: 1vh;
+}
+
+.reg-title{
+  margin: 0px;
 }
