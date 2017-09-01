@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   def show
     @pending_requests = Request.where(mentor_id: nil)
     @requests_in_progress = Request.where('mentor_id is not null')
+    @request = current_user.requests.first
   end
 
   private
