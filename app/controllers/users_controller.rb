@@ -37,6 +37,12 @@ class UsersController < ApplicationController
     @request = current_user.requests.first
   end
 
+  def edit
+    if request.xhr?
+      render '_edit_picture_form', layout: false
+    end 
+  end 
+
   private
 
   def allowed_params

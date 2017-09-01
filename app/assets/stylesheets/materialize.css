@@ -9465,3 +9465,8 @@ body {
 .k-a-r-l-text {
   margin: 2px;
 }
+
+.profile-info{
+  position: relative;
+  top: 4vh;
+}

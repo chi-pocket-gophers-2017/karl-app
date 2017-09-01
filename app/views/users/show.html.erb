@@ -1,6 +1,19 @@
-<h1>Users show</h1>
+<div class="container">
+  
+  <div class="row profile-info">
+    <div id="profile-picture-div" class="col s3">
+     <a id="profile-picture" href="/users/<%=current_user.id%>/edit"> 
+      <%= image_tag("Karl-defualt.jpg", :alt => "default", :class => "hoverable") %>
+     </a>
+    </div>
+    <div class="col s3 white-text ">
+      <h5>Welcome</h5>
+      <h5><%= current_user.first_name.capitalize %></h5>
+    </div>
+  </div>
 
-<%= button_to "Make a new request", requests_path %>
+  <%= button_to "Make a new request", requests_path %>
+</div>
 
 <% if @request != nil %> 
 	<%= button_to "I've been helped", request_path(@request), method: :delete %>
@@ -23,3 +36,4 @@
 	<%= render partial: 'requests/pending_request', locals: {r: r} %>
 <% end %>
 </div>
+
