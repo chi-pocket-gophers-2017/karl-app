@@ -31,6 +31,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @pending_requests = Request.where(mentor_id: nil)
+    @in_progress_requests = Request.where(mentor_id: !nil)
+  end
+
   private
 
   def allowed_params

@@ -3,7 +3,9 @@
 <%= button_to "Make a new request", requests_path %>
 
 <div id="requests">
-  <% Request.all.each do |r| %>
-    <p><%= r.student.first_name %></p>
-  <% end %>
+<% @pending_requests.each do |r| %>
+	<%= render partial: 'requests/mentor_card', locals: {r: r} %>
+<% end %>
 </div>
+
+
