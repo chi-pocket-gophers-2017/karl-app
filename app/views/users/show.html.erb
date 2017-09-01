@@ -1,7 +1,8 @@
 <div class="container">
+
   <div class="row profile-info">
     <div id="profile-picture-div" class="col s3">
-     <a id="profile-picture" href="/users/<%=current_user.id%>/edit"> 
+     <a id="profile-picture" href="/users/<%=current_user.id%>/edit">
       <%= image_tag("Karl-defualt.jpg", :alt => "default", :class => "hoverable") %>
      </a>
     </div>
@@ -10,9 +11,9 @@
       <h5><%= current_user.first_name.capitalize %></h5>
     </div>
   </div>
-  
+
   <br>
-  
+
   <div class="row center">
     <div class="btn waves-effect black-text">
       <%= button_to "Make a new request", requests_path %>
@@ -20,12 +21,14 @@
   </div>
 </div>
 
-<% if @request != nil %> 
+
+<% if @request != nil %>
 	<div class="row center">
     <div class="btn waves-effect black-text">
       <%= button_to "I've been helped", request_path(@request), method: :delete %>
     </div>
   </div>
+
 <% end %>
 
 <% if @pending_requests.any? && current_user.mentor %>
@@ -46,7 +49,8 @@
 <div class="center" id="requests">
 	<h3 class="header white-text center">Queue:</h3>
 <% @pending_requests.each do |r| %>
-	<%= render partial: 'requests/pending_request', locals: {r: r} %>
+	<div-><%= render partial: 'requests/pending_request', locals: {r: r} %></div>
 <% end %>
+  <div class="bullshit-div"> </div>
 </div>
 
