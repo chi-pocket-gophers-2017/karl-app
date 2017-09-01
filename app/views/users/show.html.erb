@@ -1,5 +1,4 @@
 <div class="container">
-  
   <div class="row profile-info">
     <div id="profile-picture-div" class="col s3">
      <a id="profile-picture" href="/users/<%=current_user.id%>/edit"> 
@@ -11,26 +10,40 @@
       <h5><%= current_user.first_name.capitalize %></h5>
     </div>
   </div>
-
-  <%= button_to "Make a new request", requests_path %>
+  
+  <br>
+  
+  <div class="row center">
+    <div class="btn waves-effect black-text">
+      <%= button_to "Make a new request", requests_path %>
+    </div>
+  </div>
 </div>
 
 <% if @request != nil %> 
-	<%= button_to "I've been helped", request_path(@request), method: :delete %>
+	<div class="row center">
+    <div class="btn waves-effect black-text">
+      <%= button_to "I've been helped", request_path(@request), method: :delete %>
+    </div>
+  </div>
 <% end %>
 
 <% if @pending_requests.any? && current_user.mentor %>
-	<%= button_to "Pick up a request", request_path(@pending_requests.first), method: :patch %>
+	<div class="row center">
+    <div class="btn waves-effect black-text">
+      <%= button_to "Pick up a request", request_path(@pending_requests.first), method: :patch %>
+    </div>
+  </div>
 <% end %>
 
-<div id="requests-in-progress">
+<div class="center" id="requests-in-progress">
 	<h3 class="header white-text center">In Progress:</h3>
 	<% @requests_in_progress.each do |r| %>
 	<%= render partial: 'requests/request_in_progress', locals: {r: r} %>
 	<% end %>
 </div>
 
-<div id="requests">
+<div class="center" id="requests">
 	<h3 class="header white-text center">Queue:</h3>
 <% @pending_requests.each do |r| %>
 	<%= render partial: 'requests/pending_request', locals: {r: r} %>
