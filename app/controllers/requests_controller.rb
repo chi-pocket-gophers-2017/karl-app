@@ -9,8 +9,8 @@ class RequestsController < ApplicationController
       @request.student = current_user
       respond_to do |f|
       if @request.save
-        f.html {ActionCable.server.broadcast 'requests',request: @request.student.first_name}
-        f.json {ActionCable.server.broadcast 'requests',request: @request.student.first_name}
+        f.html {ActionCable.server.broadcast 'requests',request: @request.student.full_name}
+        f.json {ActionCable.server.broadcast 'requests',request: @request.student.full_name}
       else
         render 'new'
       end
@@ -22,8 +22,8 @@ class RequestsController < ApplicationController
       @delete = Request.where(mentor_id: current_user.id)
       @delete.destroy_all
       @request = Request.where(mentor_id: nil).first
-      @request.mentor_id = current_user.id 
-      @request.save 
+      @request.mentor_id = current_user.id
+      @request.save
       redirect_to '/queue'
     else
       redirect_to new_session_path
