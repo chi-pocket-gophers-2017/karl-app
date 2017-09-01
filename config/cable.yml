@@ -7,4 +7,3 @@ test:
 production:
   adapter: redis
   url: redis://redistogo:08532e60fc4e45e443abde2628657e15@angelfish.redistogo.com:11808/
-  channel_prefix: karl-app_production
