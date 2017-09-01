@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :mentors, controller: 'users', only: [:create], action: "create_mentor"
   resources :students, controller: 'users', only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :requests, only: [:new, :create, :patch, :destroy]
+  resources :requests, only: [:new, :create, :update, :destroy]
 end

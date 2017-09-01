@@ -2,8 +2,28 @@
 
 <%= button_to "Make a new request", requests_path %>
 
+<% if @request != nil %> 
+	<%= button_to "I've been helped", request_path(@request), method: :delete %>
+<% end %>
+
+<% if @pending_requests.any? && current_user.mentor %>
+	<%= button_to "Pick up a request", request_path(@pending_requests.first), method: :patch %>
+<% end %>
+
+<div id="requests-in-progress">
+	<h1>In Progress:</h1>
+	<% @requests_in_progress.each do |r| %>
+	<%= render partial: 'requests/request_in_progress', locals: {r: r} %>
+	<% end %>
+</div>
+
+<br>
+<br>
+<br>
+
 <div id="requests">
-  <% Request.all.each do |r| %>
-    <p><%= r.student.first_name %></p>
-  <% end %>
+	<h1>Queue</h1>
+<% @pending_requests.each do |r| %>
+	<%= render partial: 'requests/pending_request', locals: {r: r} %>
+<% end %>
 </div>
