@@ -1,5 +1,15 @@
-<div class="request-in-progress">
-	<p> <%= r.student.full_name %> </p>
-	<p><%= r.mentor.full_name %></p>
-	<p> <%= r.created_at.strftime("%I:%M %p") %></p>
-</div>
+
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card red darken-1">
+            <div class="card-content white-text">
+              <span class="card-title"><%= r.student.full_name %></span>
+ 				<p> PICTURE </p>
+ 				<p>Currently being helped by <%= r.mentor.full_name %></p>
+            </div>
+            <div class="card white">
+				<p> Request made at <%= r.created_at.strftime("%I:%M %p") %></p>
+			</div>
+          </div>
+        </div>
+      </div>
