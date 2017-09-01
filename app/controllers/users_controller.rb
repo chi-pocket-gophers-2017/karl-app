@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:id] = @user.id
       logger.info "Saved the user"
-      redirect_to root_path, notice: "You are now logged in as #{@user.first_name} #{@user.last_name}."
+      redirect_to @user
     else
       render 'new'
     end
@@ -24,10 +24,9 @@ class UsersController < ApplicationController
     @user.mentor = true
     if @user.save
       session[:id] = @user.id
-      redirect_to root_path, notice: "You are now logged in as #{@user.first_name} #{@user.last_name}."
+      redirect_to @user
     else
       render 'new_mentor'
-      redirect_to root_path
     end
   end
 
