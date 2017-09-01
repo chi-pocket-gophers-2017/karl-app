@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
+  get '/queue', to: "users#show"
   resources :users, only: [:show]
   resources :mentors, controller: 'users', only: [:new], action: "new_mentor"
   resources :mentors, controller: 'users', only: [:create], action: "create_mentor"
