@@ -1,8 +1,10 @@
 <div class="container">
   
   <div class="row profile-info">
-    <div id="profile-picture" class="col s3">
-      <%= image_tag("Karl-defualt.jpg", :alt => "default", :class => "hoverable") %>
+    <div id="profile-picture-div" class="col s3">
+     <a href="/users/<%=current_user.id%>/edit"> 
+      <%= image_tag("Karl-defualt.jpg", :alt => "default", :class => "hoverable", :id => "profile-picture") %>
+     </a>
     </div>
     <div class="col s3 white-text ">
       <h5>Welcome</h5>

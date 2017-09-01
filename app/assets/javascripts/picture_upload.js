@@ -27,29 +27,28 @@ $(document).ready(function() {
 
 // message apend functions 
 
-var messageListener = function(){
-  $('#send-message-column').on( "submit", "#send-message-form", handleMessage);
+var pictureListener = function(){
+  $('#profile-picture-div').on( "click", "#profile-picture", handlePicture);
 }
 
-// var handleMessage = function(e) {
-//   e.preventDefault();
-//   ajaxPromise = messageRequest(this);
-//   ajaxPromise.done(messageUpdate.bind(this));
-//   ajaxPromise.fail(messagefail.bind(this));
-// }
+var handlePicture = function(e) {
+  e.preventDefault();
+  ajaxPromise = pictureRequest(this);
+  ajaxPromise.done(pictureUpdate.bind(this));
+  // ajaxPromise.fail(messagefail.bind(this));
+}
 
-// var messageRequest = function(element) {
-//   var ajaxOptions = {method: 'POST', 
-//                      url: $(element).attr('action'),
-//                      data: $(element).serialize()
-//                     };
-//   var ajaxPromise = $.ajax(ajaxOptions);
-//   return ajaxPromise;
-// }
+var pictureRequest = function(element) {
+  var ajaxOptions = {method: 'GET', 
+                     url: $(element).attr('href'),
+                    };
+  var ajaxPromise = $.ajax(ajaxOptions);
+  return ajaxPromise;
+}
 
-// var messageUpdate = function(response){
-//  $('#send-message-column').replaceWith(response);
-// }
+var pictureUpdate = function(response){
+ console.log(response);
+}
 
 // var messagefail = function(response){
 //  $('#send-message-column').prepend(response.responseText);
