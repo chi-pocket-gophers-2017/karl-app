@@ -17,12 +17,22 @@ class RequestsController < ApplicationController
     end
   end
 
-  def patch
-
+  def update
+    if logged_in?
+      @delete = Request.where(mentor_id: current_user.id)
+      @delete.destroy_all
+      @request = Request.where(mentor_id: nil).first
+      @request.mentor_id = current_user.id 
+      @request.save 
+      redirect_to '/queue'
+    else
+      redirect_to new_session_path
+    end
   end
 
   def destroy
-    # Find the request either by it's id, student_id, or mentor_id
-    # Delete that shit
+    post = Request.find(params[:id])
+    post.destroy
+    redirect_to '/queue'
   end
 end
