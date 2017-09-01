@@ -40,7 +40,7 @@ var handlePicture = function(e) {
 
 var pictureRequest = function(element) {
   var ajaxOptions = {method: 'GET', 
-                     url: $(element).attr('href'),
+                     url: $(element).attr('href')
                     };
   var ajaxPromise = $.ajax(ajaxOptions);
   return ajaxPromise;
