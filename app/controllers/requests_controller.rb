@@ -4,16 +4,16 @@ class RequestsController < ApplicationController
   end
 
   def create
-    if logged_in?
+     return redirect_to new_session_path if !logged_in?
       @request = Request.new
       @request.student = current_user
+      respond_to do |f|
       if @request.save
-        redirect_to root_path
+        f.html {ActionCable.server.broadcast 'requests',request: @request.student.first_name}
+        f.json {ActionCable.server.broadcast 'requests',request: @request.student.first_name}
       else
         render 'new'
       end
-    else
-      redirect_to new_session_path
     end
   end
 

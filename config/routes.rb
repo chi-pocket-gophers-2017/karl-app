@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
   root 'welcome#index'
   get '/queue', to: "users#show"
   resources :users, only: [:show]

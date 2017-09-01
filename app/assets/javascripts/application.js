@@ -12,4 +12,5 @@
 //
 
 //= require init
-//= require_tree ./channels 
+//= require_tree .
+//= require_tree ./channels
