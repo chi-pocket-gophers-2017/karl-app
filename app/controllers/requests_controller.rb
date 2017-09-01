@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
       @request.student = current_user
       respond_to do |f|
       if @request.save
-        f.html {ActionCable.server.broadcast 'requests',request: @request.student.full_name}
+        f.html {ActionCable.server.broadcast 'requests',request: {name: @request.student.full_name, created_at: @request.created_at}}
         f.json {ActionCable.server.broadcast 'requests',request: @request.student.full_name}
       else
         render 'new'
