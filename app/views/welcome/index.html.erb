@@ -1,25 +1,27 @@
-<div class="container">
-  <div class="col s12 center">
-    <h3 class="header center white-text title-welcome">Welcome</h3>
-    <h4 class="header center white-text to-text">to</h4>
-    <h3 class="header center white-text karl-text">K.A.R.L</h3>
-    <h5 class="header center white-text sign-up-text"> Sign up as </h5>
-    <div class="row">
+<div class="center-reg" >
+  <div class="container">
+    <div class="col s12 center">
+      <h3 class="header center white-text title-welcome">Welcome</h3>
+      <h4 class="header center white-text to-text">to</h4>
+      <h3 class="header center white-text karl-text">K.A.R.L</h3>
+      <h5 class="header center white-text sign-up-text"> Sign up as </h5>
+      <div class="row">
+        <div class="waves-effect waves-light btn col s5">
+          <%= link_to "Student", new_student_path %>
+        </div>
+        <div class="white-text col s2">
+          <h5 class="center"> or </h5>
+        </div>
+        <div class="waves-effect waves-light btn col s5">
+          <%= link_to "Mentor", new_mentor_path %>
+        </div>
+      </div>
+      <h5 class="header center white-text sign-up-text"> K nowledge </h5>
+      <h5 class="header center white-text sign-up-text"> A cquisition </h5>
+      <h5 class="header center white-text sign-up-text"> R equest </h5>
+      <h5 class="header center white-text sign-up-text"> L asso </h5>
       <div class="waves-effect waves-light btn col s5">
-        <%= link_to "Student", new_student_path %>
+        <%= link_to "Sign in", new_session_path %>
       </div>
-      <div class="white-text col s2">
-        <h5 class="center"> or </h5>
-      </div>
-      <div class="waves-effect waves-light btn col s5">
-        <%= link_to "Mentor", new_mentor_path %>
-      </div>
-    </div>
-    <h5 class="header center white-text sign-up-text"> K nowledge </h5>
-    <h5 class="header center white-text sign-up-text"> A cquisition </h5>
-    <h5 class="header center white-text sign-up-text"> R equest </h5>
-    <h5 class="header center white-text sign-up-text"> L asso </h5>
-    <div class="waves-effect waves-light btn col s5">
-      <%= link_to "Sign in", new_session_path %>
-    </div>
+  </div>
 </div>
